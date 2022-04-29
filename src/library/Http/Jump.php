@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace App\Ebcms\Link\Http;
 
-use App\Ebcms\Admin\Http\Common;
+use App\Ebcms\Admin\Traits\ResponseTrait;
+use App\Ebcms\Admin\Traits\RestfulTrait;
 use DiggPHP\Database\Db;
 use DiggPHP\Request\Request;
 
-class Jump extends Common
+class Jump
 {
+    use RestfulTrait;
+    use ResponseTrait;
+
     public function get(
         Db $db,
         Request $request
